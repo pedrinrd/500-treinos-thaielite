@@ -1,0 +1,8 @@
+{
+  "name": "Muay Thai Pro — Treinamento Digital",
+  "description": "Tenha seus treinos de Muay Thai organizados e prontos para consultar. VSL, treinos em vídeo, combinações prontas e acesso imediato.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
