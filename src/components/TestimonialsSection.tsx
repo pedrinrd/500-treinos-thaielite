@@ -65,10 +65,10 @@ export function TestimonialsSection() {
           className="font-headline font-black text-3xl sm:text-5xl text-white tracking-tight uppercase mb-2.5"
           style={{ textWrap: 'balance' }}
         >
-          O QUE DIZEM OS ALUNOS E INSTRUTORES DO <span className="text-[#E50914]">THAI ELITE</span>
+          QUEM JÁ CONHECEU O <span className="text-[#E50914]">THAI ELITE</span> RECOMENDA
         </h2>
         <p className="text-sm sm:text-base text-[#A1A1AA]">
-          Mensagens reais de quem já organizou a rotina de treinos e acessa o material pelo celular.
+          Mensagens reais de alunos e praticantes que acessam os treinamentos em vídeo pelo celular.
         </p>
       </motion.div>
 

@@ -157,26 +157,19 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
       {/* Headline Principal */}
       <motion.h1
         {...fadeUp(0.03)}
-        className="font-headline font-black text-[2.25rem] sm:text-6xl md:text-7xl tracking-tight text-white max-w-4xl leading-[0.93] mb-2 sm:mb-4"
+        className="font-headline font-black text-[2rem] sm:text-5xl md:text-6xl tracking-tight text-white max-w-4xl leading-[0.95] mb-2.5 sm:mb-4 uppercase"
         style={{ textWrap: 'balance' }}
       >
-        PARE DE TREINAR <span className="text-[#E50914]">SEM DIREÇÃO</span>.
+        APRENDA MUAY THAI EM CASA,{' '}
+        <span className="text-[#E50914]">MESMO COMEÇANDO DO ZERO!</span>
       </motion.h1>
 
       {/* Subheadline Direta */}
       <motion.p
         {...fadeUp(0.06)}
-        className="text-sm sm:text-2xl text-white font-semibold max-w-2xl leading-snug mb-1.5 sm:mb-2.5 px-1"
+        className="text-xs sm:text-lg text-[#D4D4D8] font-medium max-w-2xl leading-relaxed mb-3.5 sm:mb-5 px-1"
       >
-        Tenha seus treinos de Muay Thai organizados e prontos para consultar no celular.
-      </motion.p>
-
-      {/* Texto complementar focado em benefícios concretos */}
-      <motion.p
-        {...fadeUp(0.09)}
-        className="text-xs sm:text-base text-[#B4B4BC] max-w-xl leading-relaxed mb-3 sm:mb-5 px-1"
-      >
-        Economize tempo no planejamento e tenha mais variedade para as aulas com combinações de Muay Thai, técnicas e sessões em vídeo em um só lugar.
+        Descubra os fundamentos do Muay Thai com treinamentos em vídeo. Conheça técnicas de socos, chutes, joelhadas, defesas e combinações para começar a praticar no seu ritmo.
       </motion.p>
 
       {/* Resumo Rápido da Oferta (O que está comprando + Quanto custa + Como acessar) */}
@@ -186,15 +179,15 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
       >
         <span className="inline-flex items-center gap-1 whitespace-nowrap">
           <CheckCircle2 className="w-3.5 h-3.5 text-[#E50914] shrink-0" />
-          <span>500 Treinos em Vídeo</span>
+          <span>Biblioteca com 500 Treinos em Vídeo</span>
         </span>
         <span className="text-[#444]" aria-hidden="true">
           •
         </span>
         <span className="inline-flex items-center gap-1 font-semibold text-white whitespace-nowrap">
-          <span>Planos a partir de </span>
+          <span>A partir de </span>
           <span className="text-[#D4AF37] underline decoration-[#D4AF37]/50 underline-offset-2">
-            R$ 10,00
+            R$10
           </span>
         </span>
       </motion.div>
@@ -227,7 +220,7 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
           poster={OFFER_CONFIG.vslPosterSrc}
           className="relative z-[1] w-full h-full object-contain bg-black cursor-pointer"
           playsInline
-          preload="none"
+          preload="metadata"
           onClick={togglePlay}
           aria-label="Vídeo oficial de apresentação do Thai Elite"
         />
@@ -240,7 +233,7 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
           >
             {!hasStartedPlaying && (
               <span className="mb-3 px-2.5 py-1 rounded bg-black/75 border border-white/15 text-[11px] font-semibold uppercase tracking-widest text-[#D4D4D8]">
-                Apresentação Rápida • 52s
+                Apresentação Rápida • 45s
               </span>
             )}
             <div className="w-20 h-20 sm:w-22 sm:h-22 rounded-full bg-[#E50914] hover:bg-[#C40812] text-white flex items-center justify-center shadow-[0_0_35px_rgba(229,9,20,0.65)] border-2 border-white/25 transition-transform duration-200 hover:scale-105 active:scale-95">
@@ -285,7 +278,7 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
                 {isMuted ? <VolumeX className="w-4 h-4 text-[#A1A1AA]" /> : <Volume2 className="w-4 h-4" />}
               </button>
               <span className="text-[11px] font-mono text-[#D4D4D8] tabular-nums">
-                {formatSeconds(currentTime)} / {formatSeconds(duration || 52)}
+                {formatSeconds(currentTime)} / {formatSeconds(duration || 45)}
               </span>
             </div>
 
@@ -321,7 +314,7 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
           onClick={onCtaClick}
           className="w-full px-8 py-4 min-h-[54px] bg-[#E50914] hover:bg-[#C40812] active:scale-[0.99] text-white text-lg sm:text-xl font-headline font-bold uppercase tracking-wider rounded-xl shadow-[0_10px_30px_rgba(229,9,20,0.35)] border border-white/15 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E50914] focus-visible:ring-offset-2 focus-visible:ring-offset-[#090909]"
         >
-          QUERO ACESSAR OS TREINOS
+          QUERO COMEÇAR A APRENDER
         </button>
 
         {/* Microcopy de Segurança e Preço */}
@@ -331,7 +324,7 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
             Pagamento único
           </span>
           <span aria-hidden="true">•</span>
-          <span>Acesso digital imediato</span>
+          <span>A partir de R$10</span>
           <span aria-hidden="true">•</span>
           <span>7 dias de garantia</span>
         </p>

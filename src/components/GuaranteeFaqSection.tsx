@@ -43,13 +43,13 @@ export function GuaranteeFaqSection({ onCtaClick }: GuaranteeFaqSectionProps) {
 
           <div className="flex-1">
             <span className="text-xs uppercase tracking-widest text-[#D4AF37] font-semibold block mb-1">
-              RISCO ZERO • COMPROMISSO COM A SUA EVOLUÇÃO
+              GARANTIA DE 7 DIAS • COMPRA SEGURA
             </span>
             <h2
               className="font-headline font-black text-2xl sm:text-4xl text-white tracking-tight uppercase mb-2.5"
               style={{ textWrap: 'balance' }}
             >
-              7 DIAS PARA CONHECER O THAI ELITE.
+              VOCÊ TEM 7 DIAS PARA CONHECER O THAI ELITE!
             </h2>
             <p className="text-sm sm:text-base text-[#A1A1AA] leading-relaxed">
               {OFFER_CONFIG.guaranteeText}
@@ -68,7 +68,7 @@ export function GuaranteeFaqSection({ onCtaClick }: GuaranteeFaqSectionProps) {
           className="text-center mb-8 sm:mb-10"
         >
           <span className="text-xs font-semibold uppercase tracking-widest text-[#E50914] mb-2 block">
-            DÚVIDAS FREQUENTES
+            DÚVIDAS DE QUEM ESTÁ COMEÇANDO
           </span>
           <h3 className="font-headline font-bold text-3xl sm:text-4xl text-white tracking-tight">
             PERGUNTAS FREQUENTES
@@ -131,20 +131,20 @@ export function GuaranteeFaqSection({ onCtaClick }: GuaranteeFaqSectionProps) {
         className="text-center bg-gradient-to-b from-[#141414] to-[#0d0d0d] border border-[#262626] rounded-2xl p-6 sm:p-12 shadow-xl"
       >
         <h3 className="font-headline font-black text-2xl sm:text-4xl text-white tracking-tight uppercase mb-2.5">
-          COMECE AGORA COM SEUS TREINOS ORGANIZADOS
+          SEU PRIMEIRO PASSO NO MUAY THAI COMEÇA AQUI!
         </h3>
         <p className="text-sm sm:text-base text-[#A1A1AA] max-w-lg mx-auto mb-6 sm:mb-8">
-          Tenha combinações de Muay Thai, mais variedade para as aulas e economia de tempo no planejamento direto no seu celular.
+          Conheça os fundamentos, movimentos básicos e combinações em vídeo para praticar no seu ritmo pelo celular ou computador.
         </p>
         <button
           type="button"
           onClick={onCtaClick}
           className="w-full sm:w-auto px-10 py-4 min-h-[54px] bg-[#E50914] hover:bg-[#C40812] active:scale-[0.99] text-white text-base sm:text-lg font-headline font-bold uppercase tracking-wider rounded-xl shadow-xl shadow-[#E50914]/30 border border-white/15 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E50914]"
         >
-          ESCOLHER MEU PLANO
+          QUERO COMEÇAR POR R$10
         </button>
         <p className="text-xs text-[#A1A1AA] mt-3">
-          Planos de R$ 10,00 ou R$ 25,90 • Pagamento único • 7 dias de garantia
+          Pagamento único • A partir de R$10 • 7 dias de garantia
         </p>
       </motion.div>
     </section>

@@ -49,7 +49,7 @@ export function Footer() {
 
         {/* Legal Disclaimer */}
         <p className="max-w-2xl mx-auto text-[11px] text-[#555] leading-relaxed">
-          Este produto não substitui o acompanhamento médico ou de um profissional de educação física credenciado. Consulte sempre seu médico antes de iniciar qualquer atividade física de alta intensidade.
+          O Thai Elite é uma biblioteca digital de treinamentos em vídeo e não substitui a orientação presencial de um instrutor ou profissional de educação física credenciado, nem o acompanhamento médico. Pratique sempre respeitando seus limites físicos.
         </p>
 
         {/* Copyright */}

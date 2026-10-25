@@ -6,7 +6,6 @@
 import { useState, useEffect } from 'react';
 import { HeroSection } from './components/HeroSection.tsx';
 import { BenefitsSection } from './components/BenefitsSection.tsx';
-import { TestimonialsSection } from './components/TestimonialsSection.tsx';
 import { BonusSection } from './components/BonusSection.tsx';
 import { OfferSection } from './components/OfferSection.tsx';
 import { GuaranteeFaqSection } from './components/GuaranteeFaqSection.tsx';
@@ -135,10 +134,7 @@ export default function App() {
         {/* SEÇÃO 2: BENEFÍCIOS + CARROSSEL ANIMADO EXCLUSIVO DE VÍDEOS DE TREINOS (9:16 REELS) */}
         <BenefitsSection onCtaClick={handleScrollToOffer} />
 
-        {/* SEÇÃO 3: CARROSSEL ANIMADO EXCLUSIVO DE DEPOIMENTOS DE ALUNOS */}
-        <TestimonialsSection />
-
-        {/* SEÇÃO 4: 5 BÔNUS EXCLUSIVOS (FIEL À 3ª PRINT + BANNER R$ 179,00) */}
+        {/* SEÇÃO 3: 5 BÔNUS EXCLUSIVOS (FIEL À 3ª PRINT + BANNER R$ 179,00) */}
         <BonusSection onCtaClick={handleScrollToOffer} />
 
         {/* SEÇÃO 5: OFERTA (PACOTE BÁSICO R$ 10 & PACOTE PRO R$ 25,90) */}

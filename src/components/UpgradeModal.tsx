@@ -91,12 +91,12 @@ export function UpgradeModal({
             id="upgrade-modal-title"
             className="font-headline font-black text-2xl sm:text-3xl text-white tracking-tight uppercase leading-tight mb-2"
           >
-            ESPERE! VOCÊ PODE LEVAR O PACOTE PRO POR MENOS.
+            ESPERE! LEVE O PACOTE COMPLETO POR UM PREÇO PROMOCIONAL.
           </h2>
 
           {/* Subheadline */}
           <p className="text-xs sm:text-sm text-[#A1A1AA] leading-relaxed mb-6">
-            Antes de finalizar, aproveite a oportunidade de levar o pacote completo com uma condição especial.
+            Antes de finalizar, aproveite esta condição única para liberar a biblioteca completa + os 5 bônus reais (incluindo o Guia de Fundamentos).
           </p>
 
           {/* Comparação Card */}
@@ -104,10 +104,10 @@ export function UpgradeModal({
             <div className="flex items-center justify-between gap-3 pb-3 border-b border-[#222222]">
               <div className="min-w-0">
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-[#E50914] block">
-                  PACOTE PRO COMPLETO
+                  PACOTE COMPLETO (PROMOCIONAL)
                 </span>
                 <p className="text-xs text-[#A1A1AA]">
-                  Acesso aos 500 treinos + 5 Bônus
+                  500 treinos em vídeo + 5 Bônus Exclusivos
                 </p>
               </div>
               <div className="text-right shrink-0">
@@ -122,7 +122,7 @@ export function UpgradeModal({
 
             {/* Economia tag */}
             <div className="pt-3 flex items-center justify-between gap-2 text-xs">
-              <span className="text-[#A1A1AA]">Sua economia imediata:</span>
+              <span className="text-[#A1A1AA]">Preço total promocional do Completo:</span>
               <span className="font-semibold text-[#D4AF37] bg-[#D4AF37]/10 px-2.5 py-0.5 rounded border border-[#D4AF37]/20 whitespace-nowrap shrink-0 tabular-nums">
                 Economia de R$ 7,00
               </span>
@@ -131,7 +131,7 @@ export function UpgradeModal({
 
           {/* Texto de Valor */}
           <p className="text-sm text-white font-medium mb-6">
-            Por apenas <span className="text-[#E50914] font-bold">R$ 8,90 a mais</span> que o Básico, você leva o Pacote Pro completo.
+            Por apenas <span className="text-[#E50914] font-bold">R$ 18,90 no total</span> (pagamento único), você leva o Pacote Completo com os 5 bônus.
           </p>
 
           {/* Botão Principal */}
@@ -140,7 +140,7 @@ export function UpgradeModal({
               onClick={onConfirmUpgrade}
               className="w-full py-4 min-h-[50px] bg-[#E50914] hover:bg-[#C40812] active:scale-[0.99] text-white text-base font-headline font-bold uppercase tracking-wider rounded-lg shadow-lg shadow-[#E50914]/25 border border-white/20 transition-all duration-200 flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E50914]"
             >
-              <span>SIM, QUERO O PRO POR R$ 18,90</span>
+              <span>QUERO O PACOTE COMPLETO POR R$ 18,90</span>
               <ArrowRight className="w-5 h-5" />
             </button>
 
@@ -149,7 +149,7 @@ export function UpgradeModal({
               onClick={onDeclineToBasic}
               className="text-xs text-[#A1A1AA] hover:text-white underline underline-offset-4 py-2 transition-colors block w-full focus-visible:outline-none"
             >
-              Não, continuar com o Básico por R$ 10.
+              Não, continuar com o Plano Essencial por R$ 10,00.
             </button>
           </div>
         </motion.div>

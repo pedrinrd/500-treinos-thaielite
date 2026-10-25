@@ -29,22 +29,22 @@ export function OfferSection({
         className="text-center max-w-2xl mx-auto mb-10 sm:mb-14"
       >
         <span className="text-xs font-semibold uppercase tracking-widest text-[#E50914] mb-2 block">
-          PLANOS E PREÇOS • ACESSO IMEDIATO
+          PLANOS E PREÇOS • PAGAMENTO ÚNICO
         </span>
         <h2
-          className="font-headline font-black text-3xl sm:text-5xl text-white tracking-tight mb-2.5"
+          className="font-headline font-black text-3xl sm:text-5xl text-white tracking-tight mb-2.5 uppercase"
           style={{ textWrap: 'balance' }}
         >
-          ESCOLHA COMO QUER COMEÇAR.
+          ESCOLHA SEU PLANO PARA COMEÇAR A APRENDER.
         </h2>
         <p className="text-sm sm:text-lg text-[#A1A1AA]">
-          Pagamento único, sem mensalidades. Compare os planos abaixo e libere seu acesso agora:
+          Acesse a biblioteca de treinamentos em vídeo no seu ritmo, pelo celular ou computador:
         </p>
       </motion.div>
 
       {/* Grid of Two Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-7 sm:gap-8 items-stretch max-w-4xl mx-auto">
-        {/* CARD 1: PLANO ESSENCIAL — PACOTE BÁSICO (R$ 10,00) */}
+        {/* CARD 1: PLANO ESSENCIAL (R$ 10,00) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -58,10 +58,10 @@ export function OfferSection({
                 PLANO ESSENCIAL
               </span>
               <h3 className="font-headline font-bold text-3xl text-white tracking-wide mt-0.5">
-                PACOTE BÁSICO
+                ESSENCIAL
               </h3>
               <p className="text-xs text-[#A1A1AA] mt-1">
-                Para quem deseja consultar a biblioteca inicial de vídeos.
+                Para quem deseja começar a consultar a biblioteca de treinamentos em vídeo.
               </p>
             </div>
 
@@ -87,11 +87,11 @@ export function OfferSection({
               </span>
               <ul className="space-y-3">
                 {[
-                  'Biblioteca principal de treinos organizados',
-                  'Conteúdos práticos em vídeo',
-                  'Sessões e combinações de Muay Thai do plano',
+                  'Biblioteca principal com 500 treinamentos em vídeo',
+                  'Demonstrações de socos, chutes, joelhadas e combinações',
                   'Acesso digital pelo celular ou computador',
-                  'Garantia incondicional de 7 dias',
+                  'Assista e revise os movimentos no seu ritmo',
+                  '7 dias de garantia para conhecer o conteúdo',
                 ].map((benefit, i) => (
                   <li
                     key={i}
@@ -111,15 +111,15 @@ export function OfferSection({
               onClick={onSelectBasic}
               className="w-full py-4 min-h-[52px] bg-[#242424] hover:bg-[#2f2f2f] active:scale-[0.99] border border-[#3a3a3a] hover:border-[#525252] text-white text-sm sm:text-base font-headline font-bold tracking-wider uppercase rounded-xl transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
             >
-              QUERO O BÁSICO POR R$ 10
+              QUERO COMEÇAR AGORA
             </button>
             <p className="text-[11px] text-center text-[#8E8E98] mt-2.5">
-              Acesso digital liberado imediatamente após confirmação
+              Pagamento único de R$10,00 • Acesso digital imediato
             </p>
           </div>
         </motion.div>
 
-        {/* CARD 2: PLANO COMPLETO — PACOTE PRO (R$ 25,90) */}
+        {/* CARD 2: PLANO COMPLETO (R$ 25,90) */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -139,10 +139,10 @@ export function OfferSection({
                 PLANO COMPLETO
               </span>
               <h3 className="font-headline font-bold text-3xl text-white tracking-wide mt-0.5">
-                PACOTE PRO
+                COMPLETO
               </h3>
               <p className="text-xs text-[#D4D4D8] mt-1">
-                Mais variedade para as aulas e economia de tempo no planejamento.
+                Biblioteca de vídeos + os 5 bônus exclusivos para aprender fundamentos, defesas e combinações.
               </p>
             </div>
 
@@ -164,26 +164,26 @@ export function OfferSection({
               </span>
             </div>
 
-            {/* Benefits List */}
+            {/* Benefits List (Only real items + 5 real bonuses) */}
             <div className="mb-7">
               <span className="block text-xs font-semibold uppercase tracking-wider text-white mb-3">
                 Tudo do Essencial + 5 Bônus Exclusivos:
               </span>
               <ul className="space-y-3">
                 {[
-                  'Tudo do Pacote Básico (500 Treinos Organizados em Vídeo)',
+                  'Tudo do Plano Essencial (500 Treinamentos em Vídeo)',
                   'Bônus 01: 20 Combinações de Ataque Profissionais',
                   'Bônus 02: 50 Treinos Físicos para Muay Thai',
                   'Bônus 03: 50 Técnicas de Defesa e Contra-Ataque',
-                  'Bônus 04 e 05: Guias de Fundamentos e Recuperação',
-                  'Fichas de combinações e recursos de organização',
-                  'Garantia incondicional de 7 dias',
+                  'Bônus 04: Guia de Fundamentos do Muay Thai',
+                  'Bônus 05: Guia de Recuperação Muscular',
+                  '7 dias de garantia para conhecer o Thai Elite',
                 ].map((benefit, i) => (
                   <li
                     key={i}
                     className="flex items-start gap-2.5 text-sm text-white font-medium"
                   >
-                    {i >= 1 && i <= 4 ? (
+                    {i >= 1 && i <= 5 ? (
                       <Gift className="w-4 h-4 text-[#D4AF37] mt-0.5 shrink-0" />
                     ) : (
                       <Check className="w-4 h-4 text-[#E50914] mt-0.5 shrink-0" />
@@ -201,11 +201,11 @@ export function OfferSection({
               onClick={onSelectPro}
               className="w-full py-4 min-h-[54px] bg-[#E50914] hover:bg-[#C40812] active:scale-[0.99] text-white text-base sm:text-lg font-headline font-bold tracking-wider uppercase rounded-xl shadow-lg shadow-[#E50914]/30 border border-white/20 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E50914]"
             >
-              QUERO O PRO POR R$ 25,90
+              QUERO O PACOTE COMPLETO
             </button>
             <div className="flex items-center justify-center gap-1.5 text-[11px] text-[#D4D4D8] mt-2.5">
               <ShieldCheck className="w-3.5 h-3.5 text-[#D4AF37] shrink-0" />
-              <span>Acesso imediato + 7 dias de garantia incondicional</span>
+              <span>Pagamento único de R$25,90 • 7 dias de garantia</span>
             </div>
           </div>
         </motion.div>

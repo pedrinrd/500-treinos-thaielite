@@ -30,8 +30,13 @@ test('Upgrade delta over basic is exactly R$ 8,90', () => {
   assert.equal(delta, 8.9);
 });
 
-test('Product name is Thai Elite', () => {
+test('Product name is Thai Elite and VSL points to new fast-rendered video', () => {
   assert.equal(OFFER_CONFIG.productName, 'Thai Elite');
+  assert.equal(
+    OFFER_CONFIG.vslVideoSrc,
+    '/assets/aistudio/vsl_nova__6c4375b2.mp4'
+  );
+  assert.equal(OFFER_CONFIG.vslPosterSrc, '/assets/aistudio/vsl-poster.webp');
 });
 
 test('Checkout URLs are verified Zuptos checkout endpoints', () => {
@@ -57,12 +62,32 @@ test('Brazilian Real format helper formats values properly', () => {
   assert.ok(formatted.includes('25,90'));
 });
 
-test('FAQ covers all 4 mandatory questions', () => {
-  assert.equal(OFFER_CONFIG.faq.length, 4);
-  assert.equal(OFFER_CONFIG.faq[0].question, 'Como recebo meu acesso?');
-  assert.equal(OFFER_CONFIG.faq[1].question, 'Posso acessar pelo celular?');
-  assert.equal(OFFER_CONFIG.faq[2].question, 'Preciso pagar mensalidade?');
-  assert.equal(OFFER_CONFIG.faq[3].question, 'Qual a diferença entre Básico e Pro?');
+test('FAQ covers beginner level, equipment, mobile access, single payment, and plan differences', () => {
+  assert.equal(
+    OFFER_CONFIG.tagline,
+    'APRENDA MUAY THAI EM CASA, MESMO COMEÇANDO DO ZERO!'
+  );
+  assert.equal(OFFER_CONFIG.faq.length, 5);
+  assert.equal(
+    OFFER_CONFIG.faq[0].question,
+    'Sou iniciante e estou começando do zero. O Thai Elite é para mim?'
+  );
+  assert.equal(
+    OFFER_CONFIG.faq[1].question,
+    'Preciso de equipamentos para praticar em casa?'
+  );
+  assert.equal(
+    OFFER_CONFIG.faq[2].question,
+    'Como recebo meu acesso e posso assistir pelo celular?'
+  );
+  assert.equal(
+    OFFER_CONFIG.faq[3].question,
+    'O pagamento é único ou tem mensalidade?'
+  );
+  assert.equal(
+    OFFER_CONFIG.faq[4].question,
+    'Qual a diferença entre os planos Essencial e Completo?'
+  );
 });
 
 test('Pixel ID and script loader are configured properly', async () => {

@@ -82,17 +82,17 @@ export function BonusSection({ onCtaClick }: BonusSectionProps) {
           <span className="text-[#E50914] font-bold">BÔNUS EXCLUSIVOS</span>
           <span className="text-[#666]">•</span>
           <span className="text-white/90">
-            CONTEÚDO EXTRA PARA MAXIMIZAR SEUS TREINOS
+            CONTEÚDO EXTRA INCLUSO NO PACOTE COMPLETO
           </span>
         </div>
         <p className="text-sm sm:text-base text-[#A1A1AA] max-w-xl mx-auto leading-relaxed">
-          Além da biblioteca principal, você recebe{' '}
-          <strong className="text-white font-semibold">5 bônus completos</strong>{' '}
+          No Plano Completo, além da biblioteca principal em vídeo, você recebe{' '}
+          <strong className="text-white font-semibold">5 bônus reais</strong>{' '}
           com{' '}
           <strong className="text-white font-semibold">
-            materiais exclusivos
+            guias de fundamentos, defesas, combinações e condicionamento
           </strong>{' '}
-          para dar mais variedade às aulas e acelerar sua evolução.
+          para apoiar sua prática no seu ritmo.
         </p>
       </motion.div>
 

@@ -225,24 +225,24 @@ export function BenefitsSection({ onCtaClick }: BenefitsSectionProps) {
   const benefitsCards = [
     {
       icon: Video,
-      title: 'TREINOS ORGANIZADOS EM VÍDEO',
+      title: 'APRENDA OS MOVIMENTOS BÁSICOS',
       description:
-        'Acompanhe demonstrações claras e tenha mais variedade para as aulas sem perder horas procurando exercícios.',
-      footer: '500 aulas em vídeo prontas para assistir e aplicar',
+        'Conheça técnicas e movimentos fundamentais do Muay Thai por meio de demonstrações em vídeo.',
+      footer: 'Demonstrações de socos, chutes, joelhadas e defesas',
     },
     {
       icon: Layers,
-      title: 'COMBINAÇÕES DE MUAY THAI',
+      title: 'TREINE NO SEU RITMO',
       description:
-        'Sequências de golpes estruturadas para manoplas, saco de pancada, dupla e condicionamento técnico.',
-      footer: 'Economia de tempo no planejamento de cada treino',
+        'Assista às demonstrações, revise os movimentos e pratique exercícios adequados ao seu nível.',
+      footer: 'Pausar, rever e praticar quantas vezes quiser',
     },
     {
       icon: Smartphone,
-      title: 'ACESSO RÁPIDO PELO CELULAR',
+      title: 'APRENDA DE ONDE ESTIVER',
       description:
-        'Consulte os treinos em segundos direto no tatame, na academia ou em casa, de forma simples e organizada.',
-      footer: 'Plataforma leve para celular, tablet ou computador',
+        'Acesse os treinamentos pelo celular ou computador.',
+      footer: 'Plataforma leve para consultar em casa ou onde preferir',
     },
   ];
 
@@ -260,16 +260,16 @@ export function BenefitsSection({ onCtaClick }: BenefitsSectionProps) {
         className="text-center max-w-3xl mx-auto mb-8 sm:mb-12"
       >
         <span className="text-xs font-semibold uppercase tracking-widest text-[#E50914] mb-2 block">
-          PRATICIDADE E ORGANIZAÇÃO
+          PARA QUEM QUER COMEÇAR DO ZERO
         </span>
         <h2
-          className="font-headline font-black text-3xl sm:text-5xl text-white tracking-tight mb-3"
+          className="font-headline font-black text-3xl sm:text-5xl text-white tracking-tight mb-3 uppercase"
           style={{ textWrap: 'balance' }}
         >
-          TUDO PARA ORGANIZAR SEUS TREINOS EM UM SÓ LUGAR.
+          FUNDAMENTOS E TREINAMENTOS EM VÍDEO PARA VOCÊ PRATICAR.
         </h2>
         <p className="text-sm sm:text-base text-[#A1A1AA] max-w-2xl mx-auto">
-          Mais variedade para as aulas e economia de tempo no planejamento diário dos seus treinos de Muay Thai.
+          Uma biblioteca digital de treinamentos para você conhecer os movimentos do Muay Thai e evoluir no seu tempo.
         </p>
       </motion.div>
 
@@ -335,16 +335,16 @@ export function BenefitsSection({ onCtaClick }: BenefitsSectionProps) {
         <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-10 relative z-10">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#E50914]/10 border border-[#E50914]/25 text-[#E50914] text-xs font-semibold uppercase tracking-widest mb-2.5">
             <Flame className="w-3.5 h-3.5" />
-            <span>DEMONSTRAÇÃO REAL • FORMATO PRÁTICO</span>
+            <span>FUNDAMENTOS E MOVIMENTOS BÁSICOS • DEMONSTRAÇÕES REAIS</span>
           </div>
           <h3
             className="font-headline font-black text-2xl sm:text-5xl text-white tracking-tight uppercase mb-2.5"
             style={{ textWrap: 'balance' }}
           >
-            VEJA OS TREINOS DO <span className="text-[#E50914]">THAI ELITE</span> EM AÇÃO
+            VEJA COMO SÃO OS TREINAMENTOS DO <span className="text-[#E50914]">THAI ELITE!</span>
           </h3>
           <p className="text-sm sm:text-base text-[#A1A1AA]">
-            Exemplos reais da biblioteca. Vídeos diretos ao ponto para você consultar no celular e aplicar na hora.
+            Explore demonstrações de técnicas, combinações e exercícios para conhecer o conteúdo disponível na plataforma.
           </p>
         </div>
 
@@ -442,7 +442,7 @@ export function BenefitsSection({ onCtaClick }: BenefitsSectionProps) {
             onClick={onCtaClick}
             className="w-full sm:w-auto px-8 py-4 min-h-[52px] bg-[#E50914] hover:bg-[#C40812] active:scale-[0.99] text-white font-headline font-bold text-base sm:text-lg uppercase tracking-wider rounded-xl shadow-lg shadow-[#E50914]/25 border border-white/15 transition-all duration-200"
           >
-            QUERO ACESSAR OS TREINOS
+            QUERO COMEÇAR A APRENDER
           </button>
         </div>
       </motion.div>
