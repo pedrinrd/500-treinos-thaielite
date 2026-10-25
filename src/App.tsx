@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { HeroSection } from './components/HeroSection.tsx';
 import { BenefitsSection } from './components/BenefitsSection.tsx';
 import { TestimonialsSection } from './components/TestimonialsSection.tsx';
@@ -17,6 +17,11 @@ import {
 } from './components/CheckoutNoticeModal.tsx';
 import { Footer } from './components/Footer.tsx';
 import { OFFER_CONFIG } from './config/offer.ts';
+import {
+  initMetaPixel,
+  trackMetaEvent,
+  buildTrackedCheckoutUrl,
+} from './utils/metaPixel.ts';
 
 export default function App() {
   // Upgrade Modal state (triggered only on Basic plan button click)
@@ -27,8 +32,17 @@ export default function App() {
     null
   );
 
+  // Initialize Meta / LowTrack Pixel on page mount
+  useEffect(() => {
+    initMetaPixel();
+  }, []);
+
   // Smooth scroll to offer section
   const handleScrollToOffer = () => {
+    trackMetaEvent('ViewContent', {
+      content_name: 'Thai Elite — Seção de Oferta',
+      content_category: 'Treinamento Digital',
+    });
     const offerElement = document.getElementById('oferta');
     if (offerElement) {
       offerElement.scrollIntoView({ behavior: 'smooth' });
@@ -37,19 +51,30 @@ export default function App() {
 
   // User clicked "QUERO O BÁSICO POR R$ 10" -> Triggers the Upgrade Modal
   const handleSelectBasic = () => {
+    trackMetaEvent('ViewContent', {
+      content_name: 'Pop-up de Upgrade Thai Elite',
+      value: OFFER_CONFIG.prices.upgrade,
+      currency: 'BRL',
+    });
     setIsUpgradeModalOpen(true);
   };
 
-  // User clicked "QUERO O PRO POR R$ 27,90" -> Direct to Pro Checkout
+  // User clicked "QUERO O PRO POR R$ 25,90" -> Direct to Pro Checkout
   const handleSelectPro = () => {
+    const targetUrl = buildTrackedCheckoutUrl(OFFER_CONFIG.checkouts.pro);
+    trackMetaEvent('InitiateCheckout', {
+      content_name: 'Pacote Pro Completo — Thai Elite',
+      value: OFFER_CONFIG.prices.pro,
+      currency: 'BRL',
+    });
     setActiveCheckout({
       planId: 'pro',
       planName: 'Pacote Pro Completo — Thai Elite',
       price: OFFER_CONFIG.prices.pro,
-      url: OFFER_CONFIG.checkouts.pro,
+      url: targetUrl,
     });
     try {
-      window.open(OFFER_CONFIG.checkouts.pro, '_blank');
+      window.open(targetUrl, '_blank');
     } catch {
       // fallback to modal
     }
@@ -57,15 +82,23 @@ export default function App() {
 
   // In modal: User accepted upgrade ("SIM, QUERO O PRO POR R$ 18,90")
   const handleConfirmUpgrade = () => {
+    const targetUrl = buildTrackedCheckoutUrl(
+      OFFER_CONFIG.checkouts.proUpgrade
+    );
+    trackMetaEvent('InitiateCheckout', {
+      content_name: 'Pacote Pro Completo — Thai Elite (Upgrade Especial)',
+      value: OFFER_CONFIG.prices.upgrade,
+      currency: 'BRL',
+    });
     setIsUpgradeModalOpen(false);
     setActiveCheckout({
       planId: 'pro-upgrade',
       planName: 'Pacote Pro Completo — Thai Elite (Upgrade Especial)',
       price: OFFER_CONFIG.prices.upgrade,
-      url: OFFER_CONFIG.checkouts.proUpgrade,
+      url: targetUrl,
     });
     try {
-      window.open(OFFER_CONFIG.checkouts.proUpgrade, '_blank');
+      window.open(targetUrl, '_blank');
     } catch {
       // fallback to modal
     }
@@ -73,15 +106,21 @@ export default function App() {
 
   // In modal: User declined upgrade ("Não, continuar com o Básico por R$ 10")
   const handleDeclineToBasic = () => {
+    const targetUrl = buildTrackedCheckoutUrl(OFFER_CONFIG.checkouts.basic);
+    trackMetaEvent('InitiateCheckout', {
+      content_name: 'Pacote Básico — Thai Elite',
+      value: OFFER_CONFIG.prices.basic,
+      currency: 'BRL',
+    });
     setIsUpgradeModalOpen(false);
     setActiveCheckout({
       planId: 'basic',
       planName: 'Pacote Básico — Thai Elite',
       price: OFFER_CONFIG.prices.basic,
-      url: OFFER_CONFIG.checkouts.basic,
+      url: targetUrl,
     });
     try {
-      window.open(OFFER_CONFIG.checkouts.basic, '_blank');
+      window.open(targetUrl, '_blank');
     } catch {
       // fallback to modal
     }
@@ -102,7 +141,7 @@ export default function App() {
         {/* SEÇÃO 4: 5 BÔNUS EXCLUSIVOS (FIEL À 3ª PRINT + BANNER R$ 179,00) */}
         <BonusSection onCtaClick={handleScrollToOffer} />
 
-        {/* SEÇÃO 5: OFERTA (PACOTE BÁSICO R$ 10 & PACOTE PRO R$ 27,90) */}
+        {/* SEÇÃO 5: OFERTA (PACOTE BÁSICO R$ 10 & PACOTE PRO R$ 25,90) */}
         <OfferSection
           onSelectBasic={handleSelectBasic}
           onSelectPro={handleSelectPro}

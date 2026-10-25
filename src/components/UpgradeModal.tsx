@@ -100,29 +100,31 @@ export function UpgradeModal({
           </p>
 
           {/* Comparação Card */}
-          <div className="bg-[#141414] border border-[#262626] rounded-xl p-5 mb-6 text-left">
-            <div className="flex items-center justify-between pb-3 border-b border-[#222222]">
-              <div>
-                <span className="text-[11px] font-semibold uppercase tracking-wider text-[#E50914]">
-                  PACOTE PRO
+          <div className="bg-[#141414] border border-[#262626] rounded-xl p-4 sm:p-5 mb-5 sm:mb-6 text-left">
+            <div className="flex items-center justify-between gap-3 pb-3 border-b border-[#222222]">
+              <div className="min-w-0">
+                <span className="text-[11px] font-semibold uppercase tracking-wider text-[#E50914] block">
+                  PACOTE PRO COMPLETO
                 </span>
-                <p className="text-xs text-[#A1A1AA]">Acesso completo aos 500 treinos</p>
+                <p className="text-xs text-[#A1A1AA]">
+                  Acesso aos 500 treinos + 5 Bônus
+                </p>
               </div>
-              <div className="text-right">
-                <span className="text-xs text-[#71717A] line-through block">
-                  R$ 27,90
+              <div className="text-right shrink-0">
+                <span className="text-xs text-[#71717A] line-through block whitespace-nowrap tabular-nums">
+                  De R$ 25,90
                 </span>
-                <span className="font-headline font-black text-2xl text-white tabular-nums">
+                <span className="font-headline font-black text-2xl sm:text-3xl text-white whitespace-nowrap tabular-nums">
                   R$ 18,90
                 </span>
               </div>
             </div>
 
             {/* Economia tag */}
-            <div className="pt-3 flex items-center justify-between text-xs">
+            <div className="pt-3 flex items-center justify-between gap-2 text-xs">
               <span className="text-[#A1A1AA]">Sua economia imediata:</span>
-              <span className="font-semibold text-[#D4AF37] bg-[#D4AF37]/10 px-2 py-0.5 rounded border border-[#D4AF37]/20">
-                Economia de R$ 9,00
+              <span className="font-semibold text-[#D4AF37] bg-[#D4AF37]/10 px-2.5 py-0.5 rounded border border-[#D4AF37]/20 whitespace-nowrap shrink-0 tabular-nums">
+                Economia de R$ 7,00
               </span>
             </div>
           </div>

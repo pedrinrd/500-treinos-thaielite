@@ -1,8 +1,28 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Barlow Condensed Fallback";
+  src: local("Arial Narrow"), local("Roboto Condensed"), local("Helvetica Neue Condensed Bold"), local("Arial");
+  font-display: swap;
+  size-adjust: 86%;
+  ascent-override: 102%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("BlinkMacSystemFont"), local("-apple-system"), local("Segoe UI"), local("Roboto"), local("Arial");
+  font-display: swap;
+  size-adjust: 107%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
 @theme {
-  --font-display: "Barlow Condensed", sans-serif;
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Barlow Condensed", "Barlow Condensed Fallback", "Arial Narrow", sans-serif;
+  --font-sans: "Inter", "Inter Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   --color-brand-black: #090909;
   --color-brand-card: #111111;
@@ -15,17 +35,43 @@
 }
 
 @layer base {
+  html,
   body {
     background-color: #090909;
     color: #ffffff;
     font-family: var(--font-sans);
     overflow-x: hidden;
+    max-width: 100vw;
+    -webkit-tap-highlight-color: transparent;
   }
 
   h1, h2, h3, h4, .font-headline {
     font-family: var(--font-display);
     letter-spacing: 0.02em;
     text-transform: uppercase;
+  }
+
+  button, a {
+    touch-action: manipulation;
+  }
+
+  #depoimentos,
+  #bonus,
+  #oferta,
+  #faq {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 700px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 

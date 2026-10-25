@@ -9,17 +9,17 @@ import {
 
 test('Offer pricing matches exact user requirements', () => {
   assert.equal(OFFER_CONFIG.prices.basic, 10.0);
-  assert.equal(OFFER_CONFIG.prices.pro, 27.9);
+  assert.equal(OFFER_CONFIG.prices.pro, 25.9);
   assert.equal(OFFER_CONFIG.prices.upgrade, 18.9);
   assert.equal(OFFER_CONFIG.prices.bonusTotalValue, 179.0);
 });
 
-test('Upgrade savings calculation is exactly R$ 9,00', () => {
+test('Upgrade savings calculation is exactly R$ 7,00', () => {
   const savings = calculateUpgradeSavings(
     OFFER_CONFIG.prices.pro,
     OFFER_CONFIG.prices.upgrade
   );
-  assert.equal(savings, 9.0);
+  assert.equal(savings, 7.0);
 });
 
 test('Upgrade delta over basic is exactly R$ 8,90', () => {
@@ -53,8 +53,8 @@ test('Drill clips and Testimonials carousels have complete items', () => {
 });
 
 test('Brazilian Real format helper formats values properly', () => {
-  const formatted = formatBRL(27.9);
-  assert.ok(formatted.includes('27,90'));
+  const formatted = formatBRL(25.9);
+  assert.ok(formatted.includes('25,90'));
 });
 
 test('FAQ covers all 4 mandatory questions', () => {
@@ -63,4 +63,23 @@ test('FAQ covers all 4 mandatory questions', () => {
   assert.equal(OFFER_CONFIG.faq[1].question, 'Posso acessar pelo celular?');
   assert.equal(OFFER_CONFIG.faq[2].question, 'Preciso pagar mensalidade?');
   assert.equal(OFFER_CONFIG.faq[3].question, 'Qual a diferença entre Básico e Pro?');
+});
+
+test('Pixel ID and script loader are configured properly', async () => {
+  const {
+    UTMIFY_PIXEL_ID,
+    UTMIFY_SCRIPT_SRC,
+    LOWTRACK_PIXEL_ID,
+    buildTrackedCheckoutUrl,
+  } = await import('../utils/metaPixel.ts');
+  assert.equal(UTMIFY_PIXEL_ID, '6abf39dabeae388a564376b3');
+  assert.equal(
+    UTMIFY_SCRIPT_SRC,
+    'https://cdn.utmify.com.br/scripts/pixel/pixel.js'
+  );
+  assert.equal(LOWTRACK_PIXEL_ID, 'lt_px_6b33dc4435fd');
+  assert.equal(
+    buildTrackedCheckoutUrl(OFFER_CONFIG.checkouts.pro),
+    'https://app.zuptos.com.br/checkout/6f58f92ff68eb1ea'
+  );
 });

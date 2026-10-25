@@ -17,6 +17,10 @@ export function Footer() {
           <img
             src={OFFER_CONFIG.logoSrc}
             alt="Thai Elite"
+            width={24}
+            height={24}
+            loading="lazy"
+            decoding="async"
             className="w-6 h-6 object-contain"
             onError={(e) => {
               (e.target as HTMLElement).style.display = 'none';

@@ -56,6 +56,13 @@ export const OFFER_CONFIG = {
   category: 'Treinamento Digital',
   tagline: 'SEU PRÓXIMO TREINO DE MUAY THAI JÁ ESTÁ ORGANIZADO.',
 
+  // LowTrack / Meta Pixel ID configurado
+  metaPixelId:
+    (typeof import.meta !== 'undefined' &&
+      (import.meta as { env?: Record<string, string> }).env
+        ?.VITE_META_PIXEL_ID) ||
+    'lt_px_6b33dc4435fd',
+
   // Official checkout links (Zuptos)
   checkouts: {
     basic: 'https://app.zuptos.com.br/checkout/3bc50bf7cae82cc2',
@@ -65,7 +72,7 @@ export const OFFER_CONFIG = {
 
   prices: {
     basic: 10.0,
-    pro: 27.9,
+    pro: 25.9,
     upgrade: 18.9,
     bonusTotalValue: 179.0,
   },
@@ -75,10 +82,13 @@ export const OFFER_CONFIG = {
   guaranteeText:
     'Conheça os materiais e avalie se atendem às suas necessidades. Caso não fique satisfeito, solicite o reembolso dentro do prazo e das condições da garantia.',
 
-  // Media assets
+  // Media assets (optimized WebP for instant mobile load, keeping original PNG intact)
   vslVideoSrc:
     '/assets/aistudio/500_Treinos_em_V_deo_de_Muay_Thai_-_Muay_Thai_Pro_d0ae31dc.mp4',
+  vslPosterSrc: '/assets/aistudio/vsl-poster.webp',
   logoSrc:
+    '/assets/aistudio/Logo_Esportivo_Thai_Elite_em_Vermelho_e_Prata_41134ae1.webp',
+  logoPngFallbackSrc:
     '/assets/aistudio/Logo_Esportivo_Thai_Elite_em_Vermelho_e_Prata_41134ae1.png',
   bonusShowcaseImageSrc: '/assets/aistudio/image_74197a46.png',
 
